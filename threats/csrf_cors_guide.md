@@ -67,18 +67,9 @@ public class SecurityConfig {
 }
 ```
 
-#### 2. CSRF Token i formulär
-```html
-<!-- Thymeleaf template -->
-<form th:action="@{/transfer}" method="post">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-    <input type="text" name="amount" placeholder="Belopp"/>
-    <input type="text" name="to" placeholder="Till konto"/>
-    <button type="submit">Överför</button>
-</form>
-```
 
-#### 3. CSRF Token i JavaScript/AJAX
+
+#### 2. CSRF Token i JavaScript/AJAX
 ```javascript
 // Hämta CSRF token från meta-tag eller cookie
 const token = document.querySelector('meta[name="_csrf"]').getAttribute('content');
@@ -166,7 +157,7 @@ Frontend (app.com)          Backend (api.com)
 
 ### Spring Boot CORS-konfiguration
 
-#### 1. Global CORS-konfiguration
+#### 1. Global CORS-konfiguration (inte nödvändigt, bara exempel)
 ```java
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {

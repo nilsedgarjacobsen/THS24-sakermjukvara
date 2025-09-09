@@ -1,5 +1,22 @@
 # XSS-skydd i Spring Boot Backend - Praktisk guide
 
+## Vad är XSS?
+
+XSS (Cross-Site Scripting) uppstår när en webbapplikation tar användardata och visar det som HTML/JavaScript utan att kontrollera att det är säkert först.
+
+**Enkelt exempel:**
+1. Användare skriver: `<script>alert('Hacked!')</script>` i ett formulär
+2. Om backend visar detta direkt som HTML: `return "<h1>" + userInput + "</h1>";`
+3. Webbläsaren kör JavaScript-koden och visar popup
+
+**Varför är det farligt?**
+- Stjäla användarnas cookies/sessioner
+- Omdirigera till skadliga sidor
+- Läsa känslig information från sidan
+- Utföra handlingar åt användaren (skicka pengar, ändra lösenord)
+
+**Viktigt:** XSS är bara ett problem när din app genererar HTML/JavaScript. JSON APIs har inte detta problem.
+
 ## När är XSS verkligen ett hot?
 
 XSS är **ENDAST** ett problem när din backend skickar användardata direkt till webbläsaren som HTML/JavaScript. 

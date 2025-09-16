@@ -1,5 +1,7 @@
 # Spring Boot Presentation - Instruktioner (10 minuter)
 
+##  Vi bokar in pass för presentation på tisdagen, onsdagen och torsdagen. Alla pass är på distans. 
+
 ## 1. Demo av fungerande applikation (4 minuter)
 
 ### Välj ett av:
